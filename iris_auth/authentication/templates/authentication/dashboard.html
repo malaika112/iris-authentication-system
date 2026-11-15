@@ -1,0 +1,35 @@
+<!-- dashboard.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - My Django App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Welcome, {{ user.username }}</h1>
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+        </header>
+        <main class="dashboard-content">
+            <p>You are successfully logged in. Here is where you can manage your account and access various features.</p>
+            
+            {% if user.image_1 %}
+            <div class="user-info">
+                <h2>Your Information</h2>
+                <img src="{{ user.image_1.url }}" alt="User Image" class="user-image">
+                <p>Confidence: {{ user.percentage_1 }}%</p>
+            </div>
+            {% else %}
+            <p>No image and confidence data available.</p>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
+
