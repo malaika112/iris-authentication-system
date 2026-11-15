@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Django local data
+iris_auth/db.sqlite3
+iris_auth/media/
+iris_auth/staticfiles/
+*.log
+.env
+
+# Trained model weights (download separately, see README)
+iris_auth/model.h5
+*.h5
+
+# Dataset (CASIA-Iris-Thousand must be obtained from its official source)
+CASIA-Iris-Thousand/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.ipynb_checkpoints/
